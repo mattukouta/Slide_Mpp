@@ -1,4 +1,0 @@
-#!/bin/bash
-export 'JAVA_HOME=/Applications/Android Studio4.0.app/Contents/jre/jdk/Contents/Home/jre'
-cd '/Users/kouta/Desktop/kotlin/Slide_MPP'
-./gradlew $@
