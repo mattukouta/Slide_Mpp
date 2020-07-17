@@ -8,6 +8,13 @@ class SlideAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fra
     override fun getItemCount(): Int = 3
 
     override fun createFragment(position: Int): Fragment {
-        return CoverFragment.newInstance(position)
+        val fragment =
+            when(position % 2) {
+                0 -> CoverFragment.newInstance(position)
+                1 -> DoorFragment.newInstance(position)
+                else -> CoverFragment.newInstance(-1)
+            }
+
+        return fragment
     }
 }
