@@ -21,13 +21,20 @@ kotlin {
     }
 
     jvm("android")
+    val coroutine_version="1.3.4"
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
+    }
+
+    sourceSets["iosMain"].dependencies {
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutine_version")
     }
 }
 
