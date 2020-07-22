@@ -2,7 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
-    kotlin("plugin.serialization") version "1.3.70"
+    kotlin("plugin.serialization") version "1.3.72"
 }
 
 kotlin {
@@ -31,6 +31,7 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version")
         implementation("io.ktor:ktor-client-core:$ktor_version")
         implementation("io.ktor:ktor-client-serialization:$ktor_version")
+        implementation("io.ktor:ktor-client-gson:$ktor_version")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializarion_version")
     }
 
@@ -39,6 +40,7 @@ kotlin {
         implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
         implementation("io.ktor:ktor-client-android:$ktor_version")
         implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
         implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializarion_version")
     }
 
