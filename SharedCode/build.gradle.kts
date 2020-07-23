@@ -22,7 +22,7 @@ kotlin {
     }
 
     jvm("android")
-    val coroutine_version="1.3.4"
+    val coroutine_version="1.3.3"
     val ktor_version="1.3.1"
     val serializarion_version="0.14.0"
 
