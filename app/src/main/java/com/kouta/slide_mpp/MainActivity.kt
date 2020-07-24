@@ -6,7 +6,7 @@ import android.os.Handler
 import android.os.Looper
 import android.util.Log
 import androidx.fragment.app.FragmentActivity
-import createApplicationScreenMessage
+import getSlideInfo
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : FragmentActivity() {
@@ -17,18 +17,16 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        platformName.text = createApplicationScreenMessage()
-
         ApiClient().getTweets(
             successCallback = {
-                handler.post{platformName.text = it.statuses?.get(0)?.text}
+                handler.post{tweets.text = it.statuses?.get(0)?.text}
             },
             errorCallback = {
-                handler.post{platformName.text = it.toString()}
+                handler.post{tweets.text = it.toString()}
                 Log.d("check", it.toString())
             }
         )
 
-        slide_content.adapter = SlideAdapter(this)
+        slide_content.adapter = SlideAdapter(this, getSlideInfo())
     }
 }
