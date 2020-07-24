@@ -8,3 +8,4 @@ SharedCode/build
 /captures
 .externalNativeBuild
 .cxx
+/SharedCode/src/commonMain/kotlin/KeyUtils.kt

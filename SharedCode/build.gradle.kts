@@ -2,6 +2,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    kotlin("plugin.serialization") version "1.3.72"
 }
 
 kotlin {
@@ -21,13 +22,34 @@ kotlin {
     }
 
     jvm("android")
+    val coroutine_version="1.3.3"
+    val ktor_version="1.3.1"
+    val serializarion_version="0.14.0"
 
     sourceSets["commonMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib-common")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-common:$coroutine_version")
+        implementation("io.ktor:ktor-client-core:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization:$ktor_version")
+        implementation("io.ktor:ktor-client-gson:$ktor_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-common:$serializarion_version")
     }
 
     sourceSets["androidMain"].dependencies {
         implementation("org.jetbrains.kotlin:kotlin-stdlib")
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutine_version")
+        implementation("io.ktor:ktor-client-android:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-jvm:$ktor_version")
+        implementation("io.ktor:ktor-client-json-jvm:$ktor_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime:$serializarion_version")
+    }
+
+    sourceSets["iosMain"].dependencies {
+        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core-native:$coroutine_version")
+        implementation("io.ktor:ktor-client-ios:$ktor_version")
+        implementation("io.ktor:ktor-client-serialization-native:$ktor_version")
+        implementation("io.ktor:ktor-client-json-native:$ktor_version")
+        implementation("org.jetbrains.kotlinx:kotlinx-serialization-runtime-native:$serializarion_version")
     }
 }
 

@@ -7,11 +7,12 @@
 //
 
 import SwiftUI
-import SharedCode
 
 struct ContentView: View {
+    @ObservedObject var observe = TweetsObservableModel()
+    
     var body: some View {
-        Text(CommonKt.createApplicationScreenMessage())
+        Text(observe.tweets)
     }
 }
 
