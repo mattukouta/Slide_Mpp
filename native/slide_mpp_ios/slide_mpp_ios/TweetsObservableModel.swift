@@ -20,7 +20,7 @@ class TweetsObservableModel: ObservableObject {
         ApiClient().getTweets(
             successCallback:{ response in
                 print(response)
-                self.tweets = response.productId
+                self.tweets = response.statuses?[0].text ?? ""
             }, errorCallback: { error in
                 print(error)
                 self.tweets = "エラー"
