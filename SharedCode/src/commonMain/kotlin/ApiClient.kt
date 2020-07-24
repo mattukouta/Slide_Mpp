@@ -1,3 +1,4 @@
+import KeyUtils.Companion.BEARER_TOKEN
 import io.ktor.client.HttpClient
 import io.ktor.client.request.get
 import io.ktor.client.request.header
@@ -19,7 +20,7 @@ class ApiClient {
             try {
                 val url = "https://api.twitter.com/1.1/search/tweets.json?q=%23${hashTag} -filter:retweets&count=2&result_type=recent&include_entities=false"
                 val result = httpClient.get<String>(url){
-                    header("Authorization","Bearer AAAAAAAAAAAAAAAAAAAAANpkGAEAAAAANOXZxNK680LbU1vtoWaOGo%2BJRmA%3D221IaVZ4TkrzW87H7QxcSvoRW4WAFFMkxAUhcuBAKyjTjCoum3")
+                    header("Authorization","Bearer $BEARER_TOKEN")
                 }
                 val tweets = Json(
                     JsonConfiguration(
