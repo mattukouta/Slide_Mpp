@@ -11,12 +11,13 @@ import kotlinx.serialization.json.JsonConfiguration
 internal expect val coroutineDispatcher: CoroutineDispatcher
 class ApiClient {
     private val httpClient = HttpClient()
+    internal val hashTag: String = "ca_fun_lt"
 
     @UnstableDefault
     fun getTweets(successCallback: (Tweets) -> Unit, errorCallback: (Exception) -> Unit) {
         GlobalScope.launch(coroutineDispatcher) {
             try {
-                val url = "https://api.twitter.com/1.1/search/tweets.json?q=%23ca_fun_lt&count=2&result_type=recent&include_entities=false"
+                val url = "https://api.twitter.com/1.1/search/tweets.json?q=%23${hashTag} -filter:retweets&count=2&result_type=recent&include_entities=false"
                 val result = httpClient.get<String>(url){
                     header("Authorization","Bearer AAAAAAAAAAAAAAAAAAAAANpkGAEAAAAANOXZxNK680LbU1vtoWaOGo%2BJRmA%3D221IaVZ4TkrzW87H7QxcSvoRW4WAFFMkxAUhcuBAKyjTjCoum3")
                 }
