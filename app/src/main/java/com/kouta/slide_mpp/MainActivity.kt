@@ -4,6 +4,7 @@ import ApiClient
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.fragment.app.FragmentActivity
 import createApplicationScreenMessage
 import kotlinx.android.synthetic.main.activity_main.*
@@ -18,13 +19,13 @@ class MainActivity : FragmentActivity() {
 
         platformName.text = createApplicationScreenMessage()
 
-//        Log.d("check", ApiClient().)
         ApiClient().getTweets(
             successCallback = {
-                handler.post{platformName.text = it.productId}
+                handler.post{platformName.text = it.statuses?.get(0)?.text}
             },
             errorCallback = {
                 handler.post{platformName.text = it.toString()}
+                Log.d("check", it.toString())
             }
         )
 
