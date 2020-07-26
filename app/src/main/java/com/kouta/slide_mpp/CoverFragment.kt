@@ -12,15 +12,11 @@ import kotlinx.android.synthetic.main.fragment_cover.*
 class CoverFragment : Fragment() {
 
     companion object {
-        const val COVER_PAGE_KEY = "cover_page"
         lateinit var slide: Slide
 
-        fun newInstance(position: Int, slide: Slide): CoverFragment {
+        fun newInstance(slide: Slide): CoverFragment {
             val coverFragment = CoverFragment()
             this.slide = slide
-            coverFragment.arguments = Bundle().apply {
-                putInt(COVER_PAGE_KEY, position)
-            }
             return coverFragment
         }
     }
@@ -34,7 +30,6 @@ class CoverFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        title.text = arguments?.getInt(COVER_PAGE_KEY).toString()
         title.text = slide.Title
     }
 }

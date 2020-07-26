@@ -11,15 +11,11 @@ import kotlinx.android.synthetic.main.fragment_door.title
 class DoorFragment : Fragment() {
 
     companion object {
-        const val DOOR_PAGE_KEY = "door_page"
         lateinit var slide: Slide
 
-        fun newInstance(position: Int, slide: Slide): DoorFragment {
+        fun newInstance(slide: Slide): DoorFragment {
             val doorFragment = DoorFragment()
             this.slide = slide
-            doorFragment.arguments = Bundle().apply {
-                putInt(DOOR_PAGE_KEY, position)
-            }
             return doorFragment
         }
     }
@@ -32,7 +28,6 @@ class DoorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        title.text = arguments?.getInt(DOOR_PAGE_KEY).toString()
         title.text = slide.Title
     }
 }
