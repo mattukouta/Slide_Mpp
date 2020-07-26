@@ -30,18 +30,18 @@ class MainActivity : FragmentActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val paddingDp = convertInt2Dp(116)
-        val orientation = getOrientation()
-
-        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
-            slideWidth = getSlideContentLarge(paddingDp)
-            slideHeight = getSlideContentSmall(slideWidth, slideSmallScale, slideLargeScale)
-        } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
-            slideHeight = getSlideContentLarge(paddingDp)
-            slideWidth = getSlideContentSmall(slideHeight, slideLargeScale, slideSmallScale)
-        }
-
-        setSlideView(slideWidth, slideHeight, orientation)
+//        val paddingDp = convertInt2Dp(116)
+//        val orientation = getOrientation()
+//
+//        if (orientation == Configuration.ORIENTATION_PORTRAIT) {
+//            slideWidth = getSlideContentLarge(paddingDp)
+//            slideHeight = getSlideContentSmall(slideWidth, slideSmallScale, slideLargeScale)
+//        } else if (orientation == Configuration.ORIENTATION_LANDSCAPE) {
+//            slideHeight = getSlideContentLarge(paddingDp)
+//            slideWidth = getSlideContentSmall(slideHeight, slideLargeScale, slideSmallScale)
+//        }
+//
+//        setSlideView(slideWidth, slideHeight, orientation)
 
         hideBar()
 
