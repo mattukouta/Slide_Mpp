@@ -6,7 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_door.title
+import kotlinx.android.synthetic.main.fragment_door.*
 
 class DoorFragment : Fragment() {
 
@@ -28,6 +28,6 @@ class DoorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.text = slide.Title
+        subTitle.text = slide.Title
     }
 }
