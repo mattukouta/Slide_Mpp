@@ -15,6 +15,7 @@ import androidx.constraintlayout.widget.ConstraintSet
 import androidx.fragment.app.FragmentActivity
 import getSlideInfo
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 
 class MainActivity : FragmentActivity() {
@@ -25,6 +26,14 @@ class MainActivity : FragmentActivity() {
     private val slideLargeScale = 4
     private var slideHeight = 0
     private var slideWidth = 0
+
+    private val timerTask = object : TimerTask() {
+        override fun run() {
+            handler.post {
+                getTweet()
+            }
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,6 +54,12 @@ class MainActivity : FragmentActivity() {
 
         hideBar()
 
+        Timer().schedule(timerTask, 0L, 5000L)
+
+        slide_content.adapter = SlideAdapter(this, getSlideInfo())
+    }
+
+    fun getTweet() {
         ApiClient().getTweets(
             successCallback = {
                 handler.post{tweets.text = it.statuses?.get(0)?.text}
@@ -54,8 +69,6 @@ class MainActivity : FragmentActivity() {
                 Log.d("check", it.toString())
             }
         )
-
-        slide_content.adapter = SlideAdapter(this, getSlideInfo())
     }
 
     fun convertInt2Dp(paddingDp: Int): Int = (paddingDp * resources.displayMetrics.density + 0.5f).toInt()
