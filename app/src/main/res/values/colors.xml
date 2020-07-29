@@ -5,4 +5,6 @@
     <color name="colorAccent">#03DAC5</color>
     
     <color name="slide_accent_color">#128C80</color>
+    <color name="slide_background">#000000</color>
+    <color name="slide_text">#ffffff</color>
 </resources>
