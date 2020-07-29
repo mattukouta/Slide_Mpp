@@ -5,6 +5,7 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
@@ -14,6 +15,7 @@ class SubSubContentAdapter(private val context: Context, private val subSubConte
 
     class SubSubContentHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val subSubContentTitle: TextView = itemView.sub_sub_content_title
+        val subSubContentTitlePoint: ImageView = itemView.sub_sub_content_title_point
         val subSubContentTextRecyclerView: RecyclerView = itemView.sub_sub_content_title_recyclerview
     }
 
@@ -25,6 +27,7 @@ class SubSubContentAdapter(private val context: Context, private val subSubConte
         if (subSubContents != null) {
             holder.subSubContentTitle.text = subSubContents[position].subSubContent.keys.first().toString()
             Log.d("check", subSubContents[position].subSubContent.keys.first().toString())
+            holder.subSubContentTitlePoint.setImageDrawable(context.getDrawable(R.drawable.ic_baseline_play_arrow_24))
 
             holder.subSubContentTextRecyclerView.layoutManager = LinearLayoutManager(context)
             val adapter = SubSubContentTextAdapter(context, subSubContents[position].subSubContent.values.first())
