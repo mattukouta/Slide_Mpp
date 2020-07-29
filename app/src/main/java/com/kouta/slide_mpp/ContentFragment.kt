@@ -6,7 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_cover.*
+import androidx.recyclerview.widget.LinearLayoutManager
+import kotlinx.android.synthetic.main.fragment_content.*
 
 
 class ContentFragment : Fragment() {
@@ -30,6 +31,11 @@ class ContentFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.text = slide.Title
+        contentTitle.text = slide.Title
+
+        subcontent_recyclerview.layoutManager = LinearLayoutManager(activity)
+
+        val adapter = activity?.applicationContext?.let { SubContentAdapter(it, slide.subContents) }
+        subcontent_recyclerview.adapter = adapter
     }
 }
