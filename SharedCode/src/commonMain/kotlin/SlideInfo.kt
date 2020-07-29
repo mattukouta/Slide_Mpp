@@ -26,7 +26,7 @@ class SlideInfo {
                     SubSubContent(hashMapOf("動画鑑賞（アニメ，Youtube等）" to null))
                 )))
             ),
-            null
+            "myImage.png"
         )
 
         private val page3  = Slide(
