@@ -1,5 +1,6 @@
 package com.kouta.slide_mpp
 
+import Slide
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -11,13 +12,11 @@ import kotlinx.android.synthetic.main.fragment_cover.*
 class CoverFragment : Fragment() {
 
     companion object {
-        const val COVER_PAGE_KEY = "cover_page"
+        lateinit var slide: Slide
 
-        fun newInstance(position: Int): CoverFragment {
+        fun newInstance(slide: Slide): CoverFragment {
             val coverFragment = CoverFragment()
-            coverFragment.arguments = Bundle().apply {
-                putInt(COVER_PAGE_KEY, position)
-            }
+            this.slide = slide
             return coverFragment
         }
     }
@@ -31,6 +30,6 @@ class CoverFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.text = arguments?.getInt(COVER_PAGE_KEY).toString()
+        title.text = slide.Title
     }
 }

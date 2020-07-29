@@ -1,5 +1,6 @@
 package com.kouta.slide_mpp
 
+import Slide
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -10,13 +11,11 @@ import kotlinx.android.synthetic.main.fragment_door.*
 class DoorFragment : Fragment() {
 
     companion object {
-        const val DOOR_PAGE_KEY = "door_page"
+        lateinit var slide: Slide
 
-        fun newInstance(position: Int): DoorFragment {
+        fun newInstance(slide: Slide): DoorFragment {
             val doorFragment = DoorFragment()
-            doorFragment.arguments = Bundle().apply {
-                putInt(DOOR_PAGE_KEY, position)
-            }
+            this.slide = slide
             return doorFragment
         }
     }
@@ -29,6 +28,6 @@ class DoorFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        title.text = arguments?.getInt(DOOR_PAGE_KEY).toString()
+        subTitle.text = slide.Title
     }
 }
