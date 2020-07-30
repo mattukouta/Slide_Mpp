@@ -13,14 +13,16 @@ struct ContentView: View {
     @ObservedObject var observe = TweetsObservableModel()
     
     var body: some View {
-        VStack {
-            PageView([
-                AnyView(SlideView()),
-                AnyView(SlideView()),
-                AnyView(SlideView()),
-                AnyView(SlideView())
-            ])
-            Text(observe.tweets)
+        ZStack {
+            VStack {
+                PageView([
+                    AnyView(CoverView(title: "Hello")),
+                    AnyView(SlideView(text: "kotlin")),
+                    AnyView(SlideView(text: "swift")),
+                    AnyView(SlideView(text: "python"))
+                ])
+                Text(observe.tweets)
+            }
         }
     }
 }

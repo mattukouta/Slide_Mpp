@@ -9,8 +9,9 @@
 import SwiftUI
 
 struct SlideView: View {
+    var text: String
     var body: some View {
-        Text("Hello, MPP")
+        Text("Hello, \(text)")
     }
 }
 
