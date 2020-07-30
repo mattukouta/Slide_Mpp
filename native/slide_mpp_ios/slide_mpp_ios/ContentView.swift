@@ -17,7 +17,7 @@ struct ContentView: View {
             VStack {
                 PageView([
                     AnyView(CoverView(title: "Hello")),
-                    AnyView(SlideView(text: "kotlin")),
+                    AnyView(DoorView(title: "kotlin")),
                     AnyView(SlideView(text: "swift")),
                     AnyView(SlideView(text: "python"))
                 ])
