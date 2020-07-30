@@ -11,7 +11,9 @@ import SwiftUI
 struct CoverView: View {
     var title: String
     var body: some View {
-        Text("Kotlinで始めるクロスプラットフォーム開発").font(.system(size: 80, weight: .regular, design: .default))
+        Text("Kotlinで始めるクロスプラットフォーム開発")
+            .font(.system(size: 80, weight: .regular, design: .default))
+            .padding(.horizontal, 50)
     }
 }
 
