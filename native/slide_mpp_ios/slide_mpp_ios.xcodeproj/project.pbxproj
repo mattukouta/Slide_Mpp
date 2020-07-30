@@ -10,6 +10,9 @@
 		1212F20C24C8C4A1003C0E6D /* SharedCode.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 12D53F7A24C18505002A7280 /* SharedCode.framework */; };
 		1212F20D24C8C4A1003C0E6D /* SharedCode.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 12D53F7A24C18505002A7280 /* SharedCode.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1212F21024C8C560003C0E6D /* TweetsObservableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F20F24C8C560003C0E6D /* TweetsObservableModel.swift */; };
+		1212F21C24D28CBE003C0E6D /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F21B24D28CBE003C0E6D /* PageView.swift */; };
+		1212F21E24D28CFF003C0E6D /* PageVIewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F21D24D28CFF003C0E6D /* PageVIewController.swift */; };
+		1212F22324D2976F003C0E6D /* SlideView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1212F22224D2976F003C0E6D /* SlideView.swift */; };
 		12D53F6624C18116002A7280 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D53F6524C18116002A7280 /* AppDelegate.swift */; };
 		12D53F6824C18116002A7280 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D53F6724C18116002A7280 /* SceneDelegate.swift */; };
 		12D53F6A24C18116002A7280 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12D53F6924C18116002A7280 /* ContentView.swift */; };
@@ -34,6 +37,9 @@
 
 /* Begin PBXFileReference section */
 		1212F20F24C8C560003C0E6D /* TweetsObservableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetsObservableModel.swift; sourceTree = "<group>"; };
+		1212F21B24D28CBE003C0E6D /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
+		1212F21D24D28CFF003C0E6D /* PageVIewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVIewController.swift; sourceTree = "<group>"; };
+		1212F22224D2976F003C0E6D /* SlideView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideView.swift; sourceTree = "<group>"; };
 		12D53F6224C18116002A7280 /* slide_mpp_ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = slide_mpp_ios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12D53F6524C18116002A7280 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12D53F6724C18116002A7280 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -85,6 +91,9 @@
 				12D53F7324C18117002A7280 /* Info.plist */,
 				12D53F6D24C18117002A7280 /* Preview Content */,
 				1212F20F24C8C560003C0E6D /* TweetsObservableModel.swift */,
+				1212F21B24D28CBE003C0E6D /* PageView.swift */,
+				1212F21D24D28CFF003C0E6D /* PageVIewController.swift */,
+				1212F22224D2976F003C0E6D /* SlideView.swift */,
 			);
 			path = slide_mpp_ios;
 			sourceTree = "<group>";
@@ -201,6 +210,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1212F21C24D28CBE003C0E6D /* PageView.swift in Sources */,
+				1212F22324D2976F003C0E6D /* SlideView.swift in Sources */,
+				1212F21E24D28CFF003C0E6D /* PageVIewController.swift in Sources */,
 				1212F21024C8C560003C0E6D /* TweetsObservableModel.swift in Sources */,
 				12D53F6624C18116002A7280 /* AppDelegate.swift in Sources */,
 				12D53F6824C18116002A7280 /* SceneDelegate.swift in Sources */,

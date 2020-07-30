@@ -7,12 +7,21 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct ContentView: View {
     @ObservedObject var observe = TweetsObservableModel()
     
     var body: some View {
-        Text(observe.tweets)
+        VStack {
+            PageView([
+                AnyView(SlideView()),
+                AnyView(SlideView()),
+                AnyView(SlideView()),
+                AnyView(SlideView())
+            ])
+            Text(observe.tweets)
+        }
     }
 }
 
