@@ -7,28 +7,20 @@
 //
 
 import SwiftUI
-import UIKit
 
 struct ContentView: View {
-    @ObservedObject var observe = TweetsObservableModel()
-    
+    var text: String
     var body: some View {
-        ZStack {
-            VStack {
-                PageView([
-                    AnyView(CoverView(title: "Hello")),
-                    AnyView(DoorView(title: "kotlin")),
-                    AnyView(SlideView(text: "swift")),
-                    AnyView(SlideView(text: "python"))
-                ])
-                Text(observe.tweets)
-            }
+        ZStack(alignment:.topLeading) {
+            Text("Hello, \(text)")
         }
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct Sample_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(text: "title")
     }
 }
+
+

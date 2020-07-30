@@ -7,16 +7,32 @@
 //
 
 import SwiftUI
+import UIKit
 
 struct SlideView: View {
-    var text: String
+    @ObservedObject var observe = TweetsObservableModel()
+    
     var body: some View {
-        Text("Hello, \(text)")
+        GeometryReader { geometry in
+            VStack {
+                PageView([
+                    AnyView(CoverView(title: "Hello")),
+                    AnyView(DoorView(title: "kotlin")),
+                    AnyView(ContentView(text: "swift")),
+                    AnyView(ContentView(text: "python"))
+                ]).frame(width: geometry.size.width, height: geometry.size.height - 100)
+                
+                Spacer()
+                
+                Text(self.observe.tweets)
+                    .frame(width: geometry.size.width, height: 100)
+                }
+        }
     }
 }
 
-struct Sample_Previews: PreviewProvider {
+struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        SlideView()
     }
 }
