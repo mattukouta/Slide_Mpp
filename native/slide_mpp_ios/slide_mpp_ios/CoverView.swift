@@ -11,9 +11,11 @@ import SwiftUI
 struct CoverView: View {
     var title: String
     var body: some View {
-        Text("Kotlinで始めるクロスプラットフォーム開発")
-            .font(.system(size: 80, weight: .regular, design: .default))
-            .padding(.horizontal, 50)
+        GeometryReader { geometry in
+            Text("Kotlinで始めるクロスプラットフォーム開発")
+                .font(.system(size: FontManager().getCoverTitleFontSize()))
+                .frame(width: geometry.size.width)
+        }
     }
 }
 

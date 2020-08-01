@@ -10,15 +10,16 @@ import SwiftUI
 
 struct ContentView: View {
     var text: String
+    let fontManager = FontManager()
     var body: some View {
-        GeometryReader { geometry in
+        GeometryReader { parentGeometry in
             ScrollView(.vertical) {
                 VStack(alignment: .leading, spacing: 0) {
                     Text("Hello, \(self.text)")
-                        .font(.largeTitle)
+                        .font(.system(size: self.fontManager.getContentTitleFontSize()))
                     Rectangle()
                         .fill(Color.red)
-                        .frame(width: geometry.size.width - 100, height: 1)
+                        .frame(width: parentGeometry.size.width - 100, height: 1)
                     
                     ForEach(1..<3) { localIndex in
                         HStack {
@@ -27,7 +28,7 @@ struct ContentView: View {
                                 .frame(width: 30, height: 30, alignment: .leading)
                             
                             Text("Hello, \(self.text)")
-                                .font(.title)
+                                .font(.system(size: self.fontManager.getContentSubTitleFontSize()))
                         }
                         
                         ForEach(1..<3) { localIndex in
@@ -37,7 +38,7 @@ struct ContentView: View {
                                     .frame(width: 20, height: 20, alignment: .leading)
                                 
                                 Text("Hello, \(self.text)")
-                                .font(.headline)
+                                .font(.system(size: self.fontManager.getContentSubSubTitleFontSize()))
                             }
                             
                             ForEach(1..<3) { localIndex in
@@ -47,7 +48,7 @@ struct ContentView: View {
                                         .frame(width: 20, height: 20, alignment: .leading)
                                     
                                     Text("Hello, \(self.text)")
-                                    .font(.body)
+                                    .font(.system(size: self.fontManager.getContentSubSubTitleListFontSize()))
                                 }
                             }.offset(x: 20, y: 0)
                         }.offset(x: 20, y: 0)

@@ -27,6 +27,8 @@ struct SlideView: View {
                 Text(self.observe.tweets)
                     .frame(width: geometry.size.width, height: 100)
                 }
+            
+                Spacer()
         }
     }
 }

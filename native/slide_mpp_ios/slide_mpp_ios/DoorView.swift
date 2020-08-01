@@ -11,9 +11,11 @@ import SwiftUI
 struct DoorView: View {
     var title: String
     var body: some View {
-        Text("Kotlinで始めるクロスプラットフォーム開発")
-            .font(.system(size: 70, weight: .regular, design: .default))
-            .padding(.horizontal, 100)
+        GeometryReader { geometry in
+            Text("Kotlinで始めるクロスプラットフォーム開発")
+                .font(.system(size: FontManager().getDoorTitleFontSize()))
+                .frame(width: geometry.size.width)
+        }
     }
 }
 
