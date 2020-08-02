@@ -20,43 +20,53 @@ struct ContentView: View {
                         .font(.system(size: self.fontManager.getContentTitleFontSize()))
                     Rectangle()
                         .fill(Color.red)
-                        .frame(width: parentGeometry.size.width - 100, height: 1)
+                        .frame(width: parentGeometry.size.width, height: 1)
                     
-                    ForEach(1..<3) { localIndex in
-                        HStack {
-                            Image("ic-send")
-                                .resizable()
-                                .frame(width: self.imageManager.getSendIconSize(), height: self.imageManager.getSendIconSize(), alignment: .leading)
-                            
-                            Text("Hello, \(self.text)")
-                                .font(.system(size: self.fontManager.getContentSubTitleFontSize()))
-                        }
-                        
-                        ForEach(1..<3) { localIndex in
-                            HStack {
-                                Image("ic-arrow")
-                                    .resizable()
-                                    .frame(width: self.imageManager.getArrowIconSize(), height: self.imageManager.getArrowIconSize(), alignment: .leading)
-                                
-                                Text("Hello, \(self.text)")
-                                .font(.system(size: self.fontManager.getContentSubSubTitleFontSize()))
-                            }
-                            
+                    HStack {
+                        VStack(alignment: .leading, spacing: 0) {
                             ForEach(1..<3) { localIndex in
                                 HStack {
-                                    Image("ic-next")
+                                    Image("ic-send")
                                         .resizable()
-                                        .frame(width: self.imageManager.getNextIconSize(), height: self.imageManager.getNextIconSize(), alignment: .leading)
+                                        .frame(width: self.imageManager.getSendIconSize(), height: self.imageManager.getSendIconSize(), alignment: .leading)
                                     
                                     Text("Hello, \(self.text)")
-                                    .font(.system(size: self.fontManager.getContentSubSubTitleListFontSize()))
+                                        .font(.system(size: self.fontManager.getContentSubTitleFontSize()))
                                 }
-                            }.offset(x: 20, y: 0)
-                        }.offset(x: 20, y: 0)
-                    }.offset(x: 10, y: 0)
-                    
-                    Spacer()
-                    
+                                
+                                ForEach(1..<3) { localIndex in
+                                    HStack {
+                                        Image("ic-arrow")
+                                            .resizable()
+                                            .frame(width: self.imageManager.getArrowIconSize(), height: self.imageManager.getArrowIconSize(), alignment: .leading)
+                                        
+                                        Text("Hello, \(self.text)")
+                                        .font(.system(size: self.fontManager.getContentSubSubTitleFontSize()))
+                                    }
+                                    
+                                    ForEach(1..<3) { localIndex in
+                                        HStack {
+                                            Image("ic-next")
+                                                .resizable()
+                                                .frame(width: self.imageManager.getNextIconSize(), height: self.imageManager.getNextIconSize(), alignment: .leading)
+                                            
+                                            Text("Hello, \(self.text)")
+                                            .font(.system(size: self.fontManager.getContentSubSubTitleListFontSize()))
+                                        }
+                                    }.offset(x: 20, y: 0)
+                                }.offset(x: 20, y: 0)
+                            }.offset(x: 10, y: 0)
+                        }
+                        
+                        Spacer()
+                        
+                        Image("my-image")
+                            .resizable()
+                            .scaledToFit()
+                            .frame(maxWidth: self.imageManager.getContentImageWidth(), maxHeight: self.imageManager.getContentImageHeight())
+                        
+                        Spacer()
+                    }
                 }
             }
         }
