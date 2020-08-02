@@ -11,6 +11,7 @@ import SwiftUI
 struct ContentView: View {
     var text: String
     let fontManager = FontManager()
+    let imageManager = ImageManager()
     var body: some View {
         GeometryReader { parentGeometry in
             ScrollView(.vertical) {
@@ -25,7 +26,7 @@ struct ContentView: View {
                         HStack {
                             Image("ic-send")
                                 .resizable()
-                                .frame(width: 30, height: 30, alignment: .leading)
+                                .frame(width: self.imageManager.getSendIconSize(), height: self.imageManager.getSendIconSize(), alignment: .leading)
                             
                             Text("Hello, \(self.text)")
                                 .font(.system(size: self.fontManager.getContentSubTitleFontSize()))
@@ -35,7 +36,7 @@ struct ContentView: View {
                             HStack {
                                 Image("ic-arrow")
                                     .resizable()
-                                    .frame(width: 20, height: 20, alignment: .leading)
+                                    .frame(width: self.imageManager.getArrowIconSize(), height: self.imageManager.getArrowIconSize(), alignment: .leading)
                                 
                                 Text("Hello, \(self.text)")
                                 .font(.system(size: self.fontManager.getContentSubSubTitleFontSize()))
@@ -45,7 +46,7 @@ struct ContentView: View {
                                 HStack {
                                     Image("ic-next")
                                         .resizable()
-                                        .frame(width: 20, height: 20, alignment: .leading)
+                                        .frame(width: self.imageManager.getNextIconSize(), height: self.imageManager.getNextIconSize(), alignment: .leading)
                                     
                                     Text("Hello, \(self.text)")
                                     .font(.system(size: self.fontManager.getContentSubSubTitleListFontSize()))

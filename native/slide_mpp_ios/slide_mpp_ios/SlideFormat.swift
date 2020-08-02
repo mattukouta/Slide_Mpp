@@ -6,4 +6,10 @@
 //  Copyright © 2020 kouta. All rights reserved.
 //
 
-import Foundation
+import SharedCode
+
+class SlideFormat {
+    func getSlideInfo() {
+        CommonKt.getSlideInfo()
+    }
+}
