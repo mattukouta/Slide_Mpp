@@ -10,37 +10,46 @@ import Foundation
 import UIKit
 
 class ImageManager {
-    let mainBoundSizeWidth: CGFloat = UIScreen.main.bounds.size.width
-    let iPhoneWidth = CGFloat(414)
-    let iPadWidth = CGFloat(1024)
+    
+    private let switches = Switch()
     
     func getSendIconSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 30
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 30
-        } else {
+        case 2:
             return 20
+        default:
+            return 0
         }
     }
     
     func getArrowIconSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        
+        switch switches.when() {
+        case 0:
             return 25
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 30
-        } else {
+        case 2:
             return 20
+        default:
+            return 0
         }
     }
     
     func getNextIconSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 25
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 30
-        } else {
+        case 2:
             return 20
+        default:
+            return 0
         }
     }
 }

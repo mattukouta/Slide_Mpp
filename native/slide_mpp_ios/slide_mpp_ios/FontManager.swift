@@ -10,66 +10,84 @@ import Foundation
 import UIKit
 
 class FontManager {
-    let mainBoundSizeWidth: CGFloat = UIScreen.main.bounds.size.width
-    let iPhoneWidth = CGFloat(414)
-    let iPadWidth = CGFloat(1024)
+    
+    private let switches = Switch()
     
     func getCoverTitleFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 80
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 30
-        } else {
+        case 2:
             return 50
+        default:
+            return 0
         }
     }
     
     func getDoorTitleFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 70
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 20
-        } else {
+        case 2:
             return 40
+        default:
+            return 0
         }
     }
     
     func getContentTitleFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 55
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 20
-        } else {
+        case 2:
             return 35
+        default:
+            return 0
         }
     }
     
     func getContentSubTitleFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 50
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 20
-        } else {
+        case 2:
             return 30
+        default:
+            return 0
         }
     }
     
     func getContentSubSubTitleFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 40
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 20
-        } else {
+        case 2:
             return 25
+        default:
+            return 0
         }
     }
+    
     func getContentSubSubTitleListFontSize() -> CGFloat {
-        if (mainBoundSizeWidth >= iPadWidth) {
+        switch switches.when() {
+        case 0:
             return 30
-        } else if(mainBoundSizeWidth <= iPhoneWidth){
+        case 1:
             return 20
-        } else {
+        case 2:
             return 25
+        default:
+            return 0
         }
     }
 }
