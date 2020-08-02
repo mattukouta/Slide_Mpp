@@ -22,9 +22,11 @@ class TweetsObservableModel: ObservableObject {
                 print(response)
                 self.tweets = response.statuses?[0].text ?? ""
             }, errorCallback: { error in
-                print(error)
+//                print(error)
                 self.tweets = "エラー"
             }
+            
+            
         )
     }
 }
