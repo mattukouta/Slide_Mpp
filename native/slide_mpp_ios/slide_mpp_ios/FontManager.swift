@@ -46,7 +46,7 @@ class FontManager {
         case 1:
             return 20
         case 2:
-            return 35
+            return 30
         default:
             return 0
         }
@@ -59,7 +59,7 @@ class FontManager {
         case 1:
             return 20
         case 2:
-            return 30
+            return 25
         default:
             return 0
         }
@@ -72,7 +72,7 @@ class FontManager {
         case 1:
             return 20
         case 2:
-            return 25
+            return 20
         default:
             return 0
         }
@@ -85,7 +85,7 @@ class FontManager {
         case 1:
             return 20
         case 2:
-            return 25
+            return 20
         default:
             return 0
         }
