@@ -52,4 +52,30 @@ class ImageManager {
             return 0
         }
     }
+    
+    func getContentImageHeight() -> CGFloat {
+        switch switches.when() {
+        case 0:
+            return 400
+        case 1:
+            return 100
+        case 2:
+            return 100
+        default:
+            return 100
+        }
+    }
+    
+    func getContentImageWidth() -> CGFloat {
+        switch switches.when() {
+        case 0:
+            return 600
+        case 1:
+            return 100
+        case 2:
+            return 100
+        default:
+            return 100
+        }
+    }
 }
