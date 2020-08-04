@@ -4,8 +4,9 @@
 .idea
 .DS_Store
 /build
-SharedCode/build
+SharedCode/build/*
 /captures
 .externalNativeBuild
 .cxx
 /SharedCode/src/commonMain/kotlin/KeyUtils.kt
+!SharedCode/build/xcode-frameworks
