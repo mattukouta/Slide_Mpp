@@ -7,20 +7,21 @@
 //
 
 import SwiftUI
+import SharedCode
 
 struct DoorView: View {
-    var title: String
+    var slideInfo: Slide
     var body: some View {
         GeometryReader { geometry in
-            Text("Kotlinで始めるクロスプラットフォーム開発")
+            Text(self.slideInfo.component2())
                 .font(.system(size: FontManager().getDoorTitleFontSize()))
                 .frame(width: geometry.size.width)
         }
     }
 }
 
-struct DoorView_Previews: PreviewProvider {
-    static var previews: some View {
-        DoorView(title: "title")
-    }
-}
+//struct DoorView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        DoorView(title: "title")
+//    }
+//}

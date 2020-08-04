@@ -11,16 +11,14 @@ import UIKit
 
 struct SlideView: View {
     @ObservedObject var observe = TweetsObservableModel()
+    private let slideInfo = SlideFormat()
     
     var body: some View {
         GeometryReader { geometry in
             VStack {
-                PageView([
-                    AnyView(CoverView(title: "Hello")),
-                    AnyView(DoorView(title: "kotlin")),
-                    AnyView(ContentView(text: "swift")),
-                    AnyView(ContentView(text: "python"))
-                ]).frame(width: geometry.size.width, height: geometry.size.height - 100)
+                PageView(
+                    self.slideInfo.createViewList()
+                ).frame(width: geometry.size.width, height: geometry.size.height - 100)
                 
                 Spacer()
                 
