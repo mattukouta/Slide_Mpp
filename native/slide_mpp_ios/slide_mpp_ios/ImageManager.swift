@@ -78,4 +78,13 @@ class ImageManager {
             return 100
         }
     }
+    
+    func getImageName(originalImageName: String) -> String {
+        switch originalImageName {
+        case "myImage.png":
+            return "my-image"
+        default:
+            return ""
+        }
+    }
 }
