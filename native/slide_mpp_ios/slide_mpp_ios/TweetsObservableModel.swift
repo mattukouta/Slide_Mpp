@@ -13,7 +13,9 @@ class TweetsObservableModel: ObservableObject {
     @Published var tweets: String = ""
     
     init() {
-        getTweets()
+        Timer.scheduledTimer(withTimeInterval: 6, repeats: true, block: { (timer) in
+            self.getTweets()
+        })
     }
     
     func getTweets(){
@@ -22,7 +24,7 @@ class TweetsObservableModel: ObservableObject {
                 print(response)
                 self.tweets = response.statuses?[0].text ?? ""
             }, errorCallback: { error in
-//                print(error)
+                print(error)
                 self.tweets = "エラー"
             }
             
