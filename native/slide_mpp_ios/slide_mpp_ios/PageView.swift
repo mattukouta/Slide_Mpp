@@ -19,6 +19,10 @@ struct PageView<Page: View>: View {
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
             PageViewController(controllers: viewControllers, currentPage: $currentPage)
+            
+            if (currentPage != 0) {
+                Text("\(currentPage)").font(.system(size: FontManager().getContentSubTitleFontSize()))
+            }
         }
     }
 }
