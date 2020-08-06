@@ -13,9 +13,15 @@ struct DoorView: View {
     var slideInfo: Slide
     var body: some View {
         GeometryReader { geometry in
-            Text(self.slideInfo.component2())
-                .font(.system(size: FontManager().getDoorTitleFontSize()))
-                .frame(width: geometry.size.width)
+            ZStack {
+                Image("slide_background")
+                .resizable()
+                .frame(width: geometry.size.width, height: geometry.size.height)
+                
+                Text(self.slideInfo.component2())
+                    .font(.system(size: FontManager().getDoorTitleFontSize()))
+                    .frame(width: geometry.size.width)
+            }
         }
     }
 }

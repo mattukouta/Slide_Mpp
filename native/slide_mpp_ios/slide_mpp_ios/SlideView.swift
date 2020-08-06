@@ -15,18 +15,20 @@ struct SlideView: View {
     
     var body: some View {
         GeometryReader { geometry in
-            VStack {
-                PageView(
-                    self.slideInfo.createViewList()
-                ).frame(width: geometry.size.width, height: geometry.size.height - 100)
-                
-                Spacer()
-                
-                Text(self.observe.tweets)
-                    .frame(width: geometry.size.width, height: 100)
+            ZStack {
+                VStack {
+                    PageView(
+                        self.slideInfo.createViewList()
+                    ).frame(width: geometry.size.width, height: geometry.size.height - 100)
+                    
+                    Spacer()
+                    
+                    Text(self.observe.tweets)
+                        .frame(width: geometry.size.width, height: 100)
                 }
-            
+                
                 Spacer()
+            }
         }
     }
 }
