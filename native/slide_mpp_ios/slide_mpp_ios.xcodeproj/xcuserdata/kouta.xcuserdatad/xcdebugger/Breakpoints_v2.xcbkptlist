@@ -18,6 +18,53 @@
             endingLineNumber = "26"
             landmarkName = "getTweets()"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "18000AA0-6F50-4C5D-902B-7937E04BAFC4 - f1d8ad03cec1ec17"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "slide_mpp_ios.TweetsObservableModel.getTweets() -&gt; ()"
+                  moduleName = "slide_mpp_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kouta/Desktop/kotlin/Slide_MPP/native/slide_mpp_ios/slide_mpp_ios/TweetsObservableModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "18000AA0-6F50-4C5D-902B-7937E04BAFC4 - 95e30ca620c12444"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__C.SharedCodeTweets) -&gt; () in slide_mpp_ios.TweetsObservableModel.getTweets() -&gt; ()"
+                  moduleName = "slide_mpp_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kouta/Desktop/kotlin/Slide_MPP/native/slide_mpp_ios/slide_mpp_ios/TweetsObservableModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "983">
+               </Location>
+               <Location
+                  uuid = "18000AA0-6F50-4C5D-902B-7937E04BAFC4 - ac2d37688bd7715d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 (__C.SharedCodeKotlinException) -&gt; () in slide_mpp_ios.TweetsObservableModel.getTweets() -&gt; ()"
+                  moduleName = "slide_mpp_ios"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kouta/Desktop/kotlin/Slide_MPP/native/slide_mpp_ios/slide_mpp_ios/TweetsObservableModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "27"
+                  endingLineNumber = "27"
+                  offsetFromSymbolStart = "34">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
