@@ -79,10 +79,12 @@ struct ContentView: View {
                             
                             Spacer()
                             
-                            Image(self.imageManager.getImageName(originalImageName: self.slideInfo.component4() ?? ""))
+                            if((self.slideInfo.component4() ?? "") != "") {
+                                Image(self.imageManager.getImageName(originalImageName: self.slideInfo.component4() ?? ""))
                                 .resizable()
                                 .scaledToFit()
                                 .frame(maxWidth: self.imageManager.getContentImageWidth(), maxHeight: self.imageManager.getContentImageHeight())
+                            }
                             
                             Spacer()
                         }
