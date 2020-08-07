@@ -1,4 +1,4 @@
-package com.kouta.slide_mpp
+package com.kouta.slide_mpp.slideview.door
 
 import Slide
 import android.os.Bundle
@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.kouta.slide_mpp.R
 import kotlinx.android.synthetic.main.fragment_door.*
 
 class DoorFragment : Fragment() {
@@ -15,7 +16,7 @@ class DoorFragment : Fragment() {
 
         fun newInstance(slide: Slide): DoorFragment {
             val doorFragment = DoorFragment()
-            this.slide = slide
+            Companion.slide = slide
             return doorFragment
         }
     }
