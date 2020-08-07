@@ -24,7 +24,9 @@ struct SlideView: View {
                     Spacer()
                     
                     Text(self.observe.tweets)
+                        .font(.system(size: FontManager().getTweetsFontSize()))
                         .frame(width: geometry.size.width, height: 100)
+
                 }
                 
                 Spacer()

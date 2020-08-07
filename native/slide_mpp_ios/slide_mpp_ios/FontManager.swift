@@ -13,6 +13,19 @@ class FontManager {
     
     private let switches = Switch()
     
+    func getTweetsFontSize() -> CGFloat {
+        switch switches.when() {
+        case 0:
+            return 25
+        case 1:
+            return 30
+        case 2:
+            return 50
+        default:
+            return 0
+        }
+    }
+    
     func getCoverTitleFontSize() -> CGFloat {
         switch switches.when() {
         case 0:
